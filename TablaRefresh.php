@@ -1,8 +1,7 @@
 <?php
     require_once('Conexion.php');
 
-    $usuario=$_POST['Buscar'];
-    $sql= "SELECT * FROM clientes WHERE Nombre LIKE '$usuario%'";
+    $sql= "SELECT * FROM clientes";
     //$sql = "INSERT INTO clientes (Nombre, Teléfono, Edad, Sexo, Email) VALUES ('$usuario', '$Telefono', '$Edad','$Sexo','$Correo')";
     $consulta ="";
 if ($resultado = mysqli_query($conn, $sql)) {
@@ -16,4 +15,3 @@ if ($resultado = mysqli_query($conn, $sql)) {
       echo ( "Error: " . $sql . "<br>" . mysqli_error($conn));
 }
 mysqli_close($conn); 
-    

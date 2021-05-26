@@ -4,7 +4,7 @@ var respuesta = document.getElementById("Respuesta");
 
 formulario.addEventListener("submit", function (e) {
     e.preventDefault();
-    console.log("Enviado");
+    //console.log("Enviado");
     var datos = new FormData(formulario);
 
     fetch('Clientes.php', {
@@ -13,7 +13,7 @@ formulario.addEventListener("submit", function (e) {
     })
         .then(res => res.text())
         .then(data => {
-            console.log(data)
+            //console.log(data)
             formulario.reset()
             if (data == "Correcto") {
                 respuesta.className = "alert alert-success";
@@ -23,7 +23,6 @@ formulario.addEventListener("submit", function (e) {
                   <hr>
                 <p class="mb-0">Muchas gracias por ser cliente de la estetica</p>
                 `;
-
             }
             else {
                 respuesta.className = "alert alert-danger";
@@ -33,31 +32,56 @@ formulario.addEventListener("submit", function (e) {
                  <hr>
                 <p class="mb-0">Vuelva a intertar por favor</p>
                 `;
-
             }
-
-
+            
+            Actualizar();
         })
-
+        
 });
 
 
 BuscarCliente.addEventListener("keyup", function (e) {
-
-    //console.log("Escribiste");
     var texto = document.getElementById("BuscarCliente");
-    console.log(texto.value);
+    //console.log(texto.value);
     var buscar = new FormData(BuscarForm);
-    if (texto !== null ) {
-        fetch('ClientesBuscar.php', {
+    fetch('ClientesBuscar.php', {
+        method: 'POST',
+        body: buscar
+    })
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("Contenido").innerHTML = data;
+        })
+});
+
+function Borrar (ele){
+    //console.log(ele.value);
+    var confirmar = confirm("¿Desea eliminar este usuario?");
+    if(confirmar){
+       // console.log("Borrado wuachin xd");
+        var eliminar = new FormData();
+        eliminar.append('eliminar',ele.value);
+        fetch('ClientesBorrar.php', {
             method: 'POST',
-            body: buscar
+            body: eliminar
         })
             .then(res => res.text())
             .then(data => {
-                //console.log(data)
-                document.getElementById("Contenido").innerHTML = data;
+                //console.log(data);
+                Actualizar();
             })
+    }else{
+        //console.log("No borrado maquinola");
     }
-});
+}
 
+function Actualizar (){
+    fetch('TablaRefresh.php', {
+        method: 'POST'
+    })
+        .then(res => res.text())
+        .then(data => {
+            //console.log(data);
+            document.getElementById("Contenido").innerHTML = data;
+        })
+}
