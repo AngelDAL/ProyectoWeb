@@ -1,5 +1,5 @@
 var formulario = document.getElementById("Formulario");
-var formulario2 = document.getElementById("Formulario2");
+//var formulario2 = document.getElementById("Formulario2");
 var respuesta = document.getElementById("Respuesta");
 
 formulario.addEventListener("submit", function (e) {
@@ -7,7 +7,7 @@ formulario.addEventListener("submit", function (e) {
     //console.log("Enviado");
     var datos = new FormData(formulario);
 
-    fetch('Clientes.php', {
+    fetch('Alta.php', {
         method: 'POST',
         body: datos
     })
@@ -18,7 +18,7 @@ formulario.addEventListener("submit", function (e) {
             if (data == "Correcto") {
                 respuesta.className = "alert alert-success";
                 respuesta.innerHTML = `
-                 <h4 class="alert-heading">Estilista registrado!</h4>
+                 <h4 class="alert-heading">Usuario registrado!</h4>
                  <p>Se ha mandado un correo a tu usuario para verificar cualquier tipo de dato, puedes tener muchos descuentos y promociones aplicables con las citas que hagas y los puntos que ahorres</p>
                   <hr>
                 <p class="mb-0">Muchas gracias por ser cliente de la estetica</p>
@@ -44,7 +44,7 @@ BuscarCliente.addEventListener("keyup", function (e) {
     var texto = document.getElementById("BuscarCliente");
     //console.log(texto.value);
     var buscar = new FormData(BuscarForm);
-    fetch('ClientesBuscar.php', {
+    fetch('Buscar.php', {
         method: 'POST',
         body: buscar
     })
@@ -61,7 +61,7 @@ function Borrar (ele){
        // console.log("Borrado wuachin xd");
         var eliminar = new FormData();
         eliminar.append('eliminar',ele.value);
-        fetch('ClientesBorrar.php', {
+        fetch('Eliminar.php', {
             method: 'POST',
             body: eliminar
         })
@@ -76,7 +76,7 @@ function Borrar (ele){
 }
 
 function Actualizar (){
-    fetch('TablaRefresh.php', {
+    fetch('Actualizar.php', {
         method: 'POST'
     })
         .then(res => res.text())
