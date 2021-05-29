@@ -17,7 +17,7 @@
 <body>
 
 
-  <div class="container-sm">
+  <div class="container-lg">
     <form id="Formulario">
       <h1>Clientes Altas</h1>
       <div class="mb-3">
@@ -67,22 +67,22 @@
         <div id="emailHelp" class="form-text">Ingrese un cliente a buscar.</div>
       </div>
       <hr>
-      <div id="RespuestaB">
+      <div>
+        <table class="table table-hover mb-5">
+          <thead class="table-dark" id="Tablita">
+            <td>#</td>
+            <td>Nombre</td>
+            <td>Teléfono</td>
+            <td>Edad</td>
+            <td>Sexo</td>
+            <td>Email</td>
+            <td>Eliminar</td>
+          </thead>
+          <tbody id="Contenido">
+          </tbody>
+        </table>
       </div>
-      <table class="table table-hover">
-        <thead class="table-dark" id="Tablita">
-          <td>#</td>
-          <td>Nombre</td>
-          <td>Teléfono</td>
-          <td>Edad</td>
-          <td>Sexo</td>
-          <td>Email</td>
-          <td>Eliminar</td>
-        </thead>
-        <tbody id="Contenido">
 
-        </tbody>
-      </table>
     </form>
   </div>
   <button type="button" class="btn btn-secondary" onclick="Actualizar()">Secondary</button>
