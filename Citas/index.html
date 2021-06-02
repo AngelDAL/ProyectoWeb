@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Citas</title>
+</head>
+
+<body>
+
+
+    <div class="container-lg">
+
+        <form id="BuscarServicio">
+            <h3>¿Qué servicio solicita?</h3>
+            <div class="form-group" id="FormularioServicio">
+                <label for="Servicios">Tratamiento a solicitar:</label>
+                <input required list="SS" name="Servicios" id="ServicioSelect">
+                <datalist id="SS">
+                </datalist>
+            </div>
+        </form>
+        <hr>
+        <form id="BuscarCliente">
+            <h3>¿A nombre de quien?</h3>
+            <div class="form-group" id="FormularioCliente">
+                <label for="Clientecitos">Ingrese el nombre del cliente:</label>
+                <input required list="CC" name="Clientecitos" id="ClienteSelect">
+                <datalist id="CC">
+                </datalist>
+            </div>
+        </form>
+        <hr>
+        <form id="BuscarEstilista">
+            <h3>¿Qué estilista atenderá?</h3>
+            <div class="form-group" id="Formulario Estilista">
+                <label for="Estilistitas">Seleccione el estilista de su agrado:</label>
+                <input required list="EE" name="Estilistitas" id="EstilistaSelect">
+                <datalist id="EE">
+                </datalist>
+            </div>
+        </form>
+
+        <hr>
+        <form id="Formulario">
+            <h3>Crear servicio </h3>
+
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+                crossorigin="anonymous">
+            <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+            <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+            <label for="datapick"> Elija la fecha de su cita</label>
+            <input id="datepicker" width="276" name="Dia" />
+            <script>
+                $('#datepicker').datepicker({
+                    uiLibrary: 'bootstrap4'
+                });
+            </script>
+
+            <br>
+            <input id="timepicker" width="276" name="Hora" />
+            <script>
+                $('#timepicker').timepicker({
+                    uiLibrary: 'bootstrap4'
+                });
+            </script>
+            <br>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-outline-primary btn-lg" type="submit">Alta</button>
+            </div>
+            <hr>
+            <div id="Respuesta">
+            </div>
+
+        </form>
+    </div>
+
+
+
+    <div class="container-sm">
+        <form id="BuscarForm">
+            <h1>Buscar Cita</h1>
+            <div class="mb-3">
+                <input required type="text" name="Buscar" textalign="Center" class="form-control form-control-lg"
+                    id="Buscar" aria-describedby="emailHelp" placeholder="Busque un cliente">
+                <div id="emailHelp" class="form-text">Buscar Servicio.</div>
+            </div>
+            <hr>
+            <div>
+                <table class="table table-hover mb-5">
+                    <thead class="table-dark" id="Tablita">
+                        <td>#</td>
+                        <td>Fecha</td>
+                        <td>Hora</td>
+                        <td>Cliente</td>
+                        <td>Servicio</td>
+                        <td>Estilista</td>
+                        <td>Eliminar</td>
+                    </thead>
+                    <tbody id="Contenido">
+                    </tbody>
+                </table>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="Funciones.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
