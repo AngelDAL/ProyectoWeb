@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Productos</title>
+</head>
+
+<body>
+
+
+    
+   
+    <div class="container-lg">
+        <h1>Alta producto</h1>
+        <hr>
+        <form id="BuscarServicio">
+            <h3>¿Proveedor?</h3>
+            <div class="form-group" id="FormularioServicio">
+                <label for="">Seleccione proovedor: </label>
+                <input required list="SS" name="Proovedor" id="ProveedorSelect" placeholder="Seleccione el proovedor">
+                <datalist id="SS">
+                </datalist>
+            </div>
+        </form>
+        <hr>
+
+        <div class="container-lg">
+            <form id="Formulario">
+                <div class="mb-3">
+                    <label for="" class="form-label">Nombre</label>
+                    <input required type="text" name="Nombre" class="form-control" id="exampleInputPassword1"
+                        placeholder="Nombre del producto">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Descripción</label>
+                    <textarea name="Descripcion" class="form-control" placeholder="Descripción del producto" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="Tipo" class="form-label">Tipo</label>
+                    <input required type="text" name="Tipo" class="form-control" id="exampleInputPassword1"
+                        placeholder="Tipo de producto (Tinte, Acondicionador, etc.)">
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Precio</label>
+                    <input required type="number" name="Precio" class="form-control" id="exampleInputPassword1"
+                        placeholder="Precio del producto">
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Cantidad Actual</label>
+                    <input required type="number" name="CantidadActual" class="form-control" id="exampleInputPassword1"
+                        placeholder="Cantidad existente de este producto">
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Cantidad Minima</label>
+                    <input required type="number" name="CantidadMinima" class="form-control" id="exampleInputPassword1"
+                        placeholder="Cantidad minima para notificar">
+                </div>
+
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn btn-outline-primary btn-lg" type="submit">Alta</button>
+                </div>
+                <hr>
+                <div id="Respuesta">
+                </div>
+            </form>
+        </div>
+
+
+
+        <div class="container-sm">
+            <form id="BuscarForm">
+                <h1>Buscar producto</h1>
+                <div class="mb-3">
+                    <input required type="text" name="Buscar" textalign="Center" class="form-control form-control-lg"
+                        id="Buscar" aria-describedby="emailHelp" placeholder="Busque un cliente">
+                    <div id="emailHelp" class="form-text">Buscar Servicio.</div>
+                </div>
+                <hr>
+                <div>
+                    <table class="table table-hover mb-5">
+                        <thead class="table-dark" id="Tablita">
+                            <td>#</td>
+                            <td>Proveedor</td>
+                            <td>Nombre</td>
+                            <td>Descripcion</td>
+                            <td>Tipo</td>
+                            <td>Precio</td>
+                            <td>Cantidad</td>
+                            <td>Cantidad Min.</td>
+                            <td>Eliminar</td>
+                        </thead>
+                        <tbody id="Contenido">
+                        </tbody>
+                    </table>
+                </div>
+
+            </form>
+        </div>
+
+        <script src="Funciones.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+            crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
